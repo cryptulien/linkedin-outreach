@@ -33,9 +33,20 @@ docker exec n8n wget -qO- http://loh-grok-runner:8090/healthz
 # Secrets live in /root/linkedin-outreach/.env (chmod 600, gitignored)
 ```
 
-## LIVE later
+## LIVE (host runner + LinkedIn desktop)
 
-1. `DRY_RUN=false` in `.env` / container env  
-2. Recreate container with same networks  
-3. Ensure host has `grok login` OAuth (no API key)  
-4. Prefer running LIVE jobs from host for computer-use, or mount display — see `docs/runbook.md`
+1. `DRY_RUN=false` in `/root/linkedin-outreach/.env` (gitignored)
+2. Host systemd: `loh-grok-runner` with `DISPLAY=:99` and `GROK_HOME=/root/.grok`
+3. LinkedIn Chromium + noVNC on `:99` (services `loh-linkedin-chrome` / `loh-linkedin-vnc` / `loh-linkedin-novnc`)
+4. Human login once via noVNC (SSO then VNC password then LinkedIn) — see `docs/runbook.md` § LIVE LinkedIn desktop
+5. Traefik dynamic example pattern: SSO on HTML, **no** forward-auth on `/websockify`
+6. Never commit `var/vnc.password.txt`, browser profiles, or `.env`
+
+Ops details for this host stay on the server only (not in the public kit tree).
+
+## n8n → host runner
+
+On this host the LIVE runner listens on the Docker bridge IP visible from `n8n`
+(UFW allows that subnet → `:8090`). Workflow HTTP nodes use that host URL in the
+**deployed** n8n instance only — the JSON templates in `workflows/` keep the
+portable `http://loh-grok-runner:8090/...` placeholders for other installs.

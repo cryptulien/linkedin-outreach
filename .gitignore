@@ -5,3 +5,11 @@ coverage/
 *.log
 data/
 .n8n/
+
+# LIVE desktop / secrets (never commit)
+var/
+*.pass
+*.password.txt
+.env.*
+!.env.example
+deploy/**/secrets/

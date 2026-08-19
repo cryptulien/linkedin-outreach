@@ -53,22 +53,31 @@ export class TwentyHttp {
     if (!res.ok) {
       throw new Error(`Twenty get person failed: ${res.status} ${await res.text()}`);
     }
-    const body = (await res.json()) as { data?: TwentyPerson };
-    const person = body.data;
-    if (!person) return undefined;
+    const body = (await res.json()) as {
+      data?: TwentyPerson | { person?: TwentyPerson };
+    };
+    const raw = body.data;
+    const person =
+      raw && "person" in raw ? raw.person : (raw as TwentyPerson | undefined);
+    if (!person?.id) return undefined;
     return this.toProspect(person);
   }
 
   async update(id: string, patch: Partial<Prospect>): Promise<Prospect> {
+    if (!id || id === "undefined") {
+      throw new Error(`Twenty update called with invalid id: ${id}`);
+    }
     const payload: Record<string, unknown> = {};
     if (patch.status) {
       payload.prospectionStage = STATUS_TO_STAGE[patch.status];
     }
-    if (patch.linkedinUrl) {
-      payload.linkedinLink = { primaryLinkUrl: patch.linkedinUrl };
-    }
-    if (patch.title) {
-      payload.jobTitle = patch.title;
+    // Only update LinkedIn URL when explicitly provided and non-empty
+    if (patch.linkedinUrl && patch.linkedinUrl.startsWith("http")) {
+      payload.linkedinLink = {
+        primaryLinkUrl: patch.linkedinUrl,
+        primaryLinkLabel: "",
+        secondaryLinks: [],
+      };
     }
 
     if (Object.keys(payload).length > 0) {
@@ -78,7 +87,9 @@ export class TwentyHttp {
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
-        throw new Error(`Twenty patch person failed: ${res.status} ${await res.text()}`);
+        throw new Error(
+          `Twenty patch person failed: ${res.status} ${await res.text()} body=${JSON.stringify(payload)} id=${id}`,
+        );
       }
     }
 
@@ -159,8 +170,11 @@ export class TwentyHttp {
       console.warn("Twenty note create failed", res.status, await res.text());
       return;
     }
-    const body = (await res.json()) as { data?: { id?: string } };
-    const noteId = body.data?.id;
+    const body = (await res.json()) as {
+      data?: { id?: string; createNote?: { id?: string }; note?: { id?: string } };
+    };
+    const noteId =
+      body.data?.id ?? body.data?.createNote?.id ?? body.data?.note?.id;
     if (!noteId) return;
     await fetch(`${this.baseUrl.replace(/\/$/, "")}/rest/noteTargets`, {
       method: "POST",
