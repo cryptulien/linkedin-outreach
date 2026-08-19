@@ -25,7 +25,7 @@ Deliver a **small clonable local project** that:
 |----------|--------|
 | Shape | n8n + `grok-runner` service (not “all in n8n”, not Unipile) |
 | Location | Dedicated Git repo |
-| Grok trigger | **Automatic** (n8n → HTTP `grok-runner` → computer use / LinkedIn browser) |
+| Grok trigger | **Automatic** (n8n → HTTP `grok-runner` → host `grok -p` OAuth / LinkedIn browser) |
 | Dry-run | `DRY_RUN=true` by default |
 | Invitation note | **None** — connection request only |
 | Messages | **DM only** after connection, ≥ 3 days, mandatory human validation |
@@ -164,7 +164,7 @@ TWENTY_API_URL=...
 TWENTY_API_KEY=
 DISCORD_WEBHOOK_URL=
 OUTREACH_PRODUCT_BLURB=...
-GROK_API_KEY=             # LIVE only — never commit
+# LIVE: host `grok login` OAuth — never GROK_API_KEY / XAI_API_KEY
 ```
 
 ### 7.2 Anti-bot caps
@@ -196,7 +196,7 @@ GROK_API_KEY=             # LIVE only — never commit
 | LinkedIn ToS / account ban | DRY_RUN default; caps; delays; LIVE runbook; no invite note |
 | Secret leakage when sharing | `.env` gitignored; `.env.example` only |
 | Polluting prod Twenty in tests | mock mode + demo seed; README stresses DRY_RUN |
-| Unstable Grok computer use | Stable API contract; dry-run without Grok; LIVE isolated in `live_browser` |
+| Unstable Grok computer use | Dry-run without Grok; LIVE = host `grok -p` + OAuth only; refuse API keys |
 
 ---
 

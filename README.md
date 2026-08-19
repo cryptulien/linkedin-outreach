@@ -39,17 +39,26 @@ make dry-run-smoke
 - Agent prompts: `prompts/*.md`  
 - CRM statuses: `twenty/statuses.md`  
 
-## LIVE mode (LinkedIn ToS risk)
+## LIVE mode (OAuth subscription, no API key)
 
-See `docs/runbook.md`. Never commit cookies or `GROK_API_KEY`.
+LIVE runs **headless Grok** on the host (`grok -p`) using your OAuth session in `~/.grok/auth.json` (subscription). Do **not** set `GROK_API_KEY` / `XAI_API_KEY`.
+
+```bash
+grok login          # or: grok login --device-auth
+# .env → DRY_RUN=false
+make live-runner    # host process; see docs/runbook.md
+```
+
+Never commit `~/.grok/auth.json`. LinkedIn ToS risk still applies when LIVE drives the browser.
 
 ## Commands
 
 ```bash
-make up                 # build + start
+make up                 # build + start (DRY_RUN in Docker)
 make test               # vitest grok-runner
 make dry-run-smoke      # invites → propose → send (dry)
 make import-workflows   # import n8n JSON workflows
+make live-runner        # host grok-runner for LIVE (OAuth)
 make down
 ```
 

@@ -26,11 +26,9 @@ export async function runInvites(
       continue;
     }
 
-    if (!config.dryRun) {
-      await executeInviteLive(existing);
-    }
-
-    const plan = planInvite(existing);
+    const plan = config.dryRun
+      ? planInvite(existing)
+      : await executeInviteLive(existing);
     if (plan.kind === "alert_profil_non_trouve") {
       const updated = await twenty.update(existing.id, {
         status: "alerting_profil_non_trouve",

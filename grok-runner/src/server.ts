@@ -1,6 +1,7 @@
 import { pathToFileURL } from "node:url";
 import Fastify from "fastify";
 import { loadConfig } from "./config.js";
+import { assertSubscriptionAuth } from "./grok_oauth.js";
 import { runAcceptances } from "./jobs/acceptances.js";
 import { runInvites } from "./jobs/invites.js";
 import { runPropose, runSend } from "./jobs/messages.js";
@@ -8,6 +9,9 @@ import { TwentyClient } from "./twenty_client.js";
 import type { Prospect, SendBody } from "./types.js";
 
 export async function buildServer(config = loadConfig()) {
+  if (!config.dryRun) {
+    assertSubscriptionAuth();
+  }
   const app = Fastify({ logger: true });
   const twenty = new TwentyClient(config);
   await twenty.init();
@@ -16,6 +20,7 @@ export async function buildServer(config = loadConfig()) {
     ok: true,
     dry_run: config.dryRun,
     twenty_mode: config.twentyMode,
+    grok_auth: "oauth_subscription",
   }));
 
   app.get("/prospects", async () => ({
