@@ -2,11 +2,8 @@
 
 - **Date:** 2026-08-19  
 - **Status:** Design validated + Excalidraw adversarial review 2026-08-19 — v0 implemented  
-- **Excalidraw:** LinkedIn outreach v1.0 board on draw.superpagr.com (initial SuperPagr example: hospital decision-makers)  
 - **Product rules:** 10 invites/day, human-validated DMs, Twenty CRM, Discord alerting — **sector-agnostic**  
-- **Repo:** [`cryptulien/linkedin-outreach`](https://github.com/cryptulien/linkedin-outreach) (renamed from `linkedin-outreach-hospitaliers`)
-
-> **Rename 2026-08-19:** the tool is general-purpose LinkedIn outreach, not hospital-only. Healthcare remains one example vertical.
+- **Repo:** [`cryptulien/linkedin-outreach`](https://github.com/cryptulien/linkedin-outreach)
 
 ---
 
@@ -27,7 +24,7 @@ Deliver a **small clonable local project** that:
 | Decision | Choice |
 |----------|--------|
 | Shape | n8n + `grok-runner` service (not “all in n8n”, not Unipile) |
-| Location | Dedicated Git repo, outside the SuperPagr monorepo |
+| Location | Dedicated Git repo |
 | Grok trigger | **Automatic** (n8n → HTTP `grok-runner` → computer use / LinkedIn browser) |
 | Dry-run | `DRY_RUN=true` by default |
 | Invitation note | **None** — connection request only |
@@ -211,6 +208,4 @@ Main intentional delta: Discord is **alerting + DM validation** in the shareable
 
 ## References
 
-- Excalidraw board (draw.superpagr.com)  
-- SuperPagr workspace design notes (historical French product context)  
-- SuperPagr n8n patterns (`n8n.superpagr.com`)  
+- n8n workflow import patterns (HTTP Request nodes, cron triggers)  

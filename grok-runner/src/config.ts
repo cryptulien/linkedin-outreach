@@ -25,7 +25,7 @@ export function loadConfig(): Config {
     port: Number(process.env.PORT ?? "8090"),
     dryRun: boolEnv("DRY_RUN", true),
     twentyMode,
-    twentyApiUrl: process.env.TWENTY_API_URL ?? "https://crm.superpagr.com",
+    twentyApiUrl: process.env.TWENTY_API_URL ?? "http://localhost:3000",
     twentyApiKey: process.env.TWENTY_API_KEY ?? "",
     discordWebhookUrl: process.env.DISCORD_WEBHOOK_URL ?? "",
     seedPath: process.env.SEED_PATH ?? "/app/twenty/seed-demo.json",

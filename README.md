@@ -53,6 +53,3 @@ make import-workflows   # import n8n JSON workflows
 make down
 ```
 
-## SuperPagr context
-
-Built for SuperPagr prospecting, the repo is intentionally **sector-agnostic**. The original hospital-decision-maker flow remains a product example in the SuperPagr workspace / Excalidraw board.
