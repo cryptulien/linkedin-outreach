@@ -6,19 +6,27 @@
     {
       "parameters": {
         "rule": {
-          "interval": [{ "field": "cronExpression", "expression": "30 8 * * *" }]
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 8 * * *"
+            }
+          ]
         }
       },
       "id": "schedDaily",
       "name": "Schedule 08:30",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [0, 0]
+      "position": [
+        0,
+        0
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "http://grok-runner:8090/jobs/invites",
+        "url": "http://loh-grok-runner:8090/jobs/invites",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "{}",
@@ -28,12 +36,15 @@
       "name": "POST invites",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [260, 0]
+      "position": [
+        260,
+        0
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "http://grok-runner:8090/jobs/messages/propose",
+        "url": "http://loh-grok-runner:8090/jobs/messages/propose",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "{}",
@@ -43,18 +54,41 @@
       "name": "POST propose DMs",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [520, 0]
+      "position": [
+        520,
+        0
+      ]
     }
   ],
   "connections": {
     "Schedule 08:30": {
-      "main": [[{ "node": "POST invites", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "POST invites",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "POST invites": {
-      "main": [[{ "node": "POST propose DMs", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "POST propose DMs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "settings": { "executionOrder": "v1" },
-  "meta": { "templateCredsSetupCompleted": true },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "tags": []
 }
