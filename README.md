@@ -2,11 +2,23 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+![LinkedIn Outreach card](docs/card/card.png)
+
 Shareable, **sector-agnostic** open-source automation: LinkedIn invitations (daily cap), weekly acceptance checks, DM proposals with **mandatory human validation**, Twenty CRM, Discord alerts.
 
 Any vertical works — healthcare, B2B SaaS, agencies, nonprofits. Point it at your CRM and templates.
 
 Orchestration: **n8n** · execution: **grok-runner** · default mode: **`DRY_RUN=true`** (no real LinkedIn actions).
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md), [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md), and [SECURITY.md](./SECURITY.md).
+
+## How it works
+
+![Workflow](docs/diagrams/workflow.png)
+
+n8n runs the clocks. grok-runner performs (or simulates) LinkedIn jobs. Twenty holds status. Discord carries alerts and the DM digest. **Nothing is sent** until a human answers `ok` / `skip` / `modifier`.
+
+Diagram source: [draw.superpagr.com](https://draw.superpagr.com) · `pages/open-source/linkedin-outreach`.
 
 ## Get started in 5 minutes
 
@@ -18,8 +30,8 @@ make up
 make dry-run-smoke
 ```
 
-- Runner: http://127.0.0.1:8090/healthz  
-- n8n: http://127.0.0.1:5679  
+- Runner: http://127.0.0.1:8090/healthz
+- n8n: http://127.0.0.1:5679
 
 ## Twenty modes
 
@@ -30,16 +42,16 @@ make dry-run-smoke
 
 ## Caps (overridable via `.env`)
 
-- 10 invitations / day (`MAX_INVITES_PER_DAY`)  
-- Acceptances: 1 batch / week (Mon 08:15)  
-- Invitation **with no note**  
-- DMs: never without human validation (`ok` / `skip` / `modifier`)  
+- 10 invitations / day (`MAX_INVITES_PER_DAY`)
+- Acceptances: 1 batch / week (Mon 08:15)
+- Invitation **with no note**
+- DMs: never without human validation (`ok` / `skip` / `modifier`)
 
 ## Customization
 
-- DM template blurb: `OUTREACH_PRODUCT_BLURB` in `.env`  
-- Agent prompts: `prompts/*.md`  
-- CRM statuses: `twenty/statuses.md`  
+- DM template blurb: `OUTREACH_PRODUCT_BLURB` in `.env`
+- Agent prompts: `prompts/*.md`
+- CRM statuses: `twenty/statuses.md`
 
 ## LIVE mode (OAuth subscription, no API key)
 
@@ -63,8 +75,3 @@ make import-workflows   # import n8n JSON workflows
 make live-runner        # host grok-runner for LIVE (OAuth)
 make down
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md), [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md), and [SECURITY.md](./SECURITY.md).
-

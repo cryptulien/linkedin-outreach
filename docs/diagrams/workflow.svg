@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="t">
+  <title id="t">LinkedIn Outreach workflow</title>
+  <rect width="1400" height="780" fill="#F4F3EF"/>
+  <text x="48" y="52" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#121212">How it works</text>
+  <text x="48" y="82" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#5C5954">DRY_RUN default · 10 invites / day · no note · DMs only after human validation</text>
+
+  <text x="48" y="128" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#5C5954">DAILY · 08:30</text>
+  <g font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+    <rect x="48" y="148" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="148" y="179" text-anchor="middle" font-size="14" fill="#121212">Uninvited pool</text>
+    <text x="148" y="200" text-anchor="middle" font-size="12" fill="#5C5954">Twenty · FIFO</text>
+    <path d="M248 184 H276" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="276,178 288,184 276,190" fill="#4A4742"/>
+
+    <rect x="292" y="148" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="392" y="179" text-anchor="middle" font-size="14" fill="#121212">LinkedIn invite</text>
+    <text x="392" y="200" text-anchor="middle" font-size="12" fill="#5C5954">cap 10 / day · no note</text>
+    <path d="M492 184 H520" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="520,178 532,184 520,190" fill="#4A4742"/>
+
+    <rect x="536" y="148" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="636" y="179" text-anchor="middle" font-size="14" fill="#121212">Invited pool</text>
+    <text x="636" y="200" text-anchor="middle" font-size="12" fill="#5C5954">invite_envoye</text>
+    <path d="M736 184 H764" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="764,178 776,184 764,190" fill="#4A4742"/>
+
+    <rect x="780" y="148" width="220" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="890" y="179" text-anchor="middle" font-size="14" fill="#121212">Discord</text>
+    <text x="890" y="200" text-anchor="middle" font-size="12" fill="#5C5954">match fail / other alerts</text>
+  </g>
+
+  <text x="48" y="280" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#5C5954">WEEKLY · MON 08:15</text>
+  <g font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+    <rect x="48" y="300" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="148" y="331" text-anchor="middle" font-size="14" fill="#121212">Invited batch</text>
+    <text x="148" y="352" text-anchor="middle" font-size="12" fill="#5C5954">15–20 + pauses</text>
+    <path d="M248 336 H276" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="276,330 288,336 276,342" fill="#4A4742"/>
+
+    <rect x="292" y="300" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="392" y="331" text-anchor="middle" font-size="14" fill="#121212">Accept check</text>
+    <text x="392" y="352" text-anchor="middle" font-size="12" fill="#5C5954">browser or DRY_RUN</text>
+    <path d="M492 336 H520" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="520,330 532,336 520,342" fill="#4A4742"/>
+
+    <rect x="536" y="300" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="636" y="331" text-anchor="middle" font-size="14" fill="#121212">Connected pool</text>
+    <text x="636" y="352" text-anchor="middle" font-size="12" fill="#5C5954">en_relation + date</text>
+  </g>
+
+  <text x="48" y="432" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#5C5954">DM · AFTER 3 DAYS · HUMAN GATE</text>
+  <g font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+    <rect x="48" y="452" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="148" y="483" text-anchor="middle" font-size="14" fill="#121212">Connected ≥ 3 days</text>
+    <text x="148" y="504" text-anchor="middle" font-size="12" fill="#5C5954">no DM sent yet</text>
+    <path d="M248 488 H276" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="276,482 288,488 276,494" fill="#4A4742"/>
+
+    <rect x="292" y="452" width="200" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="392" y="483" text-anchor="middle" font-size="14" fill="#121212">Draft DM</text>
+    <text x="392" y="504" text-anchor="middle" font-size="12" fill="#5C5954">message_a_valider</text>
+    <path d="M492 488 H520" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="520,482 532,488 520,494" fill="#4A4742"/>
+
+    <polygon points="636,452 736,488 636,524 536,488" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="636" y="484" text-anchor="middle" font-size="14" fill="#121212">Human</text>
+    <text x="636" y="504" text-anchor="middle" font-size="12" fill="#5C5954">ok / skip / edit</text>
+    <path d="M736 488 H764" stroke="#4A4742" stroke-width="1.6" fill="none"/>
+    <polygon points="764,482 776,488 764,494" fill="#4A4742"/>
+
+    <rect x="780" y="452" width="220" height="72" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="890" y="483" text-anchor="middle" font-size="14" fill="#121212">Send LinkedIn DM</text>
+    <text x="890" y="504" text-anchor="middle" font-size="12" fill="#5C5954">then Twenty update</text>
+  </g>
+
+  <rect x="48" y="572" width="1304" height="156" rx="16" fill="#fff" stroke="#121212" stroke-opacity="0.08"/>
+  <text x="76" y="614" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#121212">Orchestration</text>
+  <text x="76" y="644" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#4A4742">n8n schedules  →  grok-runner jobs  →  Twenty CRM  +  Discord</text>
+  <text x="76" y="676" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#4A4742">LIVE = host grok -p on your OAuth session. Never commit ~/.grok/auth.json.</text>
+  <text x="76" y="704" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#5C5954">Source: draw.superpagr.com · pages/open-source/linkedin-outreach</text>
+</svg>
