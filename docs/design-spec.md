@@ -1,10 +1,10 @@
-# Design — Projet local partageable : automatisation LinkedIn décideurs hospitaliers
+# Design — Projet local partageable : automatisation LinkedIn outreach (généraliste)
 
 - **Date** : 19/08/2026
-- **Statut** : design validé + revue adverse schéma Excalidraw 19/08/2026 — prêt à implémenter
-- **Schéma Excalidraw** : zone « Automatisation LinkedIn Décideurs Hospitaliers v1.0 » sur draw.superpagr.com
-- **Spec métier figée** : outreach 10 invites/jour, DM avec validation humaine, Twenty CRM, Discord alerting
-- **Repo cible** : dédié hors monorepo SuperPagr (ex. `linkedin-outreach-hospitaliers`)
+- **Statut** : design validé + revue adverse schéma Excalidraw 19/08/2026 — implémenté v0
+- **Schéma Excalidraw** : zone outreach LinkedIn v1.0 sur draw.superpagr.com (cas d’usage initial : décideurs hospitaliers SuperPagr)
+- **Spec métier** : outreach 10 invites/jour, DM avec validation humaine, Twenty CRM, Discord alerting — **sector-agnostic**
+- **Repo** : `cryptulien/linkedin-outreach` (ex. `linkedin-outreach-hospitaliers`, renommé)
 
 ---
 
@@ -70,7 +70,7 @@ Livrer un **petit projet local clonable** qui :
 ### 3.2 Structure du repo
 
 ```
-linkedin-outreach-hospitaliers/
+linkedin-outreach/
 ├── README.md
 ├── .env.example
 ├── docker-compose.yml

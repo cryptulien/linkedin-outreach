@@ -2,7 +2,7 @@
 
 Pour chaque prospect `en_relation` accepté depuis ≥ 3 jours sans DM :
 
-1. Génère un message à partir du template (personnalise Prénom / Établissement / Poste).
+1. Génère un message à partir du template (personnalise Prénom / organisation / Poste). Le pitch produit vient de `OUTREACH_PRODUCT_BLURB`.
 2. Ne l'envoie PAS.
 3. Présente un digest :
 

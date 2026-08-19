@@ -6,8 +6,8 @@ const base: Prospect = {
   id: "x",
   firstName: "A",
   lastName: "B",
-  title: "DAM",
-  establishment: "CHU",
+  title: "CEO",
+  establishment: "Acme",
   status: "non_invite",
 };
 

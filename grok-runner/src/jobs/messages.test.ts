@@ -55,7 +55,7 @@ describe("messages", () => {
         firstName: "Laura",
         lastName: "Simon",
         title: "Cadre",
-        establishment: "CHU",
+        establishment: "Orion",
         status: "en_relation",
         acceptedAt: "2026-07-05T10:00:00.000Z",
         profileMatch: true,

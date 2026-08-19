@@ -29,11 +29,14 @@ export function planInvite(prospect: Prospect): InvitePlan {
 }
 
 export function defaultDmTemplate(p: Prospect): string {
+  const product =
+    process.env.OUTREACH_PRODUCT_BLURB ??
+    "Nous aidons les équipes à gagner du temps sur leur organisation au quotidien.";
   return [
     `Bonjour ${p.firstName},`,
     "",
-    `Je me permets de vous contacter concernant la gestion des plannings de garde au sein de ${p.establishment}.`,
-    "SuperPagr aide les équipes médicales à construire des plannings équitables et conformes.",
+    `Je me permets de vous écrire au sujet de ${p.establishment} (${p.title}).`,
+    product,
     "",
     "Seriez-vous ouvert(e) à un échange de 15 minutes ?",
     "",

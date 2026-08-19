@@ -1,6 +1,6 @@
 # Prompt — Lot d'invitations LinkedIn (étape A)
 
-Tu es l'agent browser Grok pour SuperPagr. Pour chaque prospect du lot :
+Tu es l'agent browser Grok pour l'outreach LinkedIn. Pour chaque prospect du lot :
 
 1. Ouvre l'URL LinkedIn fournie (ou recherche Nom + Poste + Établissement).
 2. Vérifie que le profil correspond (Nom, Poste, Établissement).

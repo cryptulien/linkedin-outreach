@@ -1,8 +1,8 @@
-# LinkedIn Outreach Hospitaliers — Implementation Plan
+# LinkedIn Outreach — Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Livrer un repo clonable `linkedin-outreach-hospitaliers` avec n8n + grok-runner en DRY_RUN, smoke testable sans LinkedIn.
+**Goal:** Livrer un repo clonable `linkedin-outreach` (généraliste) avec n8n + grok-runner en DRY_RUN, smoke testable sans LinkedIn.
 
 **Architecture:** n8n orchestre (crons) ; `grok-runner` (Node 20/TS) exécute les jobs HTTP ; Twenty externe ou mock fichier ; Discord webhook pour alertes + digests validation.
 
@@ -23,7 +23,7 @@
 ### Task 1: Scaffold repo + Compose + README
 
 **Files:**
-- Create: `/root/linkedin-outreach-hospitaliers/` (git init)
+- Create: `/root/linkedin-outreach/` (git init)
 - Create: `docker-compose.yml`, `.env.example`, `.gitignore`, `Makefile`, `README.md`
 
 - [ ] **Step 1:** Init git + fichiers racine (compose n8n:5678 + grok-runner:8090, network, env)
