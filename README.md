@@ -1,6 +1,8 @@
 # LinkedIn Outreach
 
-Shareable, **sector-agnostic** local automation: LinkedIn invitations (daily cap), weekly acceptance checks, DM proposals with **mandatory human validation**, Twenty CRM, Discord alerts.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+Shareable, **sector-agnostic** open-source automation: LinkedIn invitations (daily cap), weekly acceptance checks, DM proposals with **mandatory human validation**, Twenty CRM, Discord alerts.
 
 Any vertical works — healthcare, B2B SaaS, agencies, nonprofits. Point it at your CRM and templates.
 
@@ -61,4 +63,8 @@ make import-workflows   # import n8n JSON workflows
 make live-runner        # host grok-runner for LIVE (OAuth)
 make down
 ```
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md), [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md), and [SECURITY.md](./SECURITY.md).
 
