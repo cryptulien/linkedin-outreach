@@ -1,0 +1,42 @@
+{
+  "id": "lohWeeklyAccept01",
+  "name": "LOH Weekly acceptances Mon 08:15",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "cronExpression", "expression": "15 8 * * 1" }]
+        }
+      },
+      "id": "schedWeekly",
+      "name": "Schedule Mon 08:15",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://grok-runner:8090/jobs/acceptances",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{}",
+        "options": {}
+      },
+      "id": "httpAcc",
+      "name": "POST acceptances",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [280, 0]
+    }
+  ],
+  "connections": {
+    "Schedule Mon 08:15": {
+      "main": [[{ "node": "POST acceptances", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": { "templateCredsSetupCompleted": true },
+  "tags": []
+}

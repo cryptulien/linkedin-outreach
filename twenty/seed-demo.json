@@ -1,0 +1,118 @@
+[
+  {
+    "id": "p01",
+    "firstName": "Alice",
+    "lastName": "Martin",
+    "title": "Directrice des affaires médicales",
+    "establishment": "CHU Nantes",
+    "linkedinUrl": "https://www.linkedin.com/in/alice-martin-demo",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p02",
+    "firstName": "Bruno",
+    "lastName": "Dupont",
+    "title": "Chef de service anesthésie",
+    "establishment": "CHU Rennes",
+    "linkedinUrl": "https://www.linkedin.com/in/bruno-dupont-demo",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p03",
+    "firstName": "Chloé",
+    "lastName": "Bernard",
+    "title": "Cadre de santé",
+    "establishment": "CH Bretagne Atlantique",
+    "status": "non_invite",
+    "profileMatch": false,
+    "altSearchFinds": true
+  },
+  {
+    "id": "p04",
+    "firstName": "David",
+    "lastName": "Petit",
+    "title": "DAM",
+    "establishment": "CHU Bordeaux",
+    "status": "non_invite",
+    "profileMatch": false,
+    "altSearchFinds": false
+  },
+  {
+    "id": "p05",
+    "firstName": "Emma",
+    "lastName": "Robert",
+    "title": "Responsable planning",
+    "establishment": "CHU Lyon",
+    "linkedinUrl": "https://www.linkedin.com/in/emma-robert-demo",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p06",
+    "firstName": "Farid",
+    "lastName": "Moreau",
+    "title": "Médecin senior",
+    "establishment": "CHU Lille",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p07",
+    "firstName": "Géraldine",
+    "lastName": "Lefebvre",
+    "title": "Directrice adjointe",
+    "establishment": "CHU Strasbourg",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p08",
+    "firstName": "Hugo",
+    "lastName": "Garcia",
+    "title": "Chef de pôle",
+    "establishment": "AP-HP",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p09",
+    "firstName": "Inès",
+    "lastName": "Roux",
+    "title": "IDEL coordinatrice",
+    "establishment": "Cabinet Nantes Sud",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p10",
+    "firstName": "Julien",
+    "lastName": "Fournier",
+    "title": "PH temps plein",
+    "establishment": "CHU Toulouse",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p11",
+    "firstName": "Karim",
+    "lastName": "Nguyen",
+    "title": "Responsable RH médicale",
+    "establishment": "CHU Montpellier",
+    "status": "non_invite",
+    "profileMatch": true
+  },
+  {
+    "id": "p12",
+    "firstName": "Laura",
+    "lastName": "Simon",
+    "title": "Cadre supérieure",
+    "establishment": "CHU Marseille",
+    "linkedinUrl": "https://www.linkedin.com/in/laura-simon-demo",
+    "status": "en_relation",
+    "inviteSentAt": "2026-07-01T08:00:00.000Z",
+    "acceptedAt": "2026-07-05T10:00:00.000Z",
+    "profileMatch": true
+  }
+]

@@ -1,0 +1,45 @@
+services:
+  grok-runner:
+    build: ./grok-runner
+    ports:
+      - "8090:8090"
+    env_file:
+      - .env
+    environment:
+      PORT: "8090"
+      DRY_RUN: ${DRY_RUN:-true}
+      TWENTY_MODE: ${TWENTY_MODE:-mock}
+      DISCORD_WEBHOOK_URL: ${DISCORD_WEBHOOK_URL:-}
+      SEED_PATH: /app/twenty/seed-demo.json
+      DATA_PATH: /app/data/prospects.json
+    volumes:
+      - ./twenty/seed-demo.json:/app/twenty/seed-demo.json:ro
+      - runner-data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8090/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  n8n:
+    image: n8nio/n8n:1.72.1
+    ports:
+      # 5678 often taken by host n8n — map local UI to 5679
+      - "5679:5678"
+    environment:
+      TZ: ${TIMEZONE:-Europe/Paris}
+      GENERIC_TIMEZONE: ${TIMEZONE:-Europe/Paris}
+      N8N_HOST: localhost
+      N8N_PORT: 5678
+      N8N_PROTOCOL: http
+      WEBHOOK_URL: http://localhost:5679/
+      N8N_DIAGNOSTICS_ENABLED: "false"
+    volumes:
+      - n8n-data:/home/node/.n8n
+    depends_on:
+      grok-runner:
+        condition: service_healthy
+
+volumes:
+  n8n-data:
+  runner-data:
