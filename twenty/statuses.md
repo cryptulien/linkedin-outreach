@@ -1,15 +1,15 @@
-# Statuts Twenty — contrat
+# Twenty statuses — contract
 
-| Statut | Description | Champs associés |
-|--------|-------------|-----------------|
-| `non_invite` | Pool FIFO initial | — |
-| `invite_envoye` | Invitation LinkedIn envoyée (sans note) | `inviteSentAt` |
-| `en_relation` | Invitation acceptée | `acceptedAt` |
-| `message_a_valider` | Draft DM proposé, en attente humain | `messageDraft` |
-| `message_envoye` | DM validé et envoyé | `messageSentAt`, `messageContent` |
-| `alerting_profil_non_trouve` | Profil LinkedIn non identifiable | — |
-| `alerting_autre` | Autre erreur bloquante | — |
+| Status | Description | Related fields |
+|--------|-------------|----------------|
+| `non_invite` | Initial FIFO pool | — |
+| `invite_envoye` | LinkedIn invitation sent (no note) | `inviteSentAt` |
+| `en_relation` | Invitation accepted | `acceptedAt` |
+| `message_a_valider` | DM draft proposed, waiting for human | `messageDraft` |
+| `message_envoye` | DM validated and sent | `messageSentAt`, `messageContent` |
+| `alerting_profil_non_trouve` | LinkedIn profile not identifiable | — |
+| `alerting_autre` | Other blocking error | — |
 
-Ordre de traitement : **FIFO** selon l’ordre de la liste / seed.
+Processing order: **FIFO** by list / seed order.
 
-Éligibilité DM : `en_relation` avec `acceptedAt` ≥ 3 jours, pas encore `message_envoye`.
+DM eligibility: `en_relation` with `acceptedAt` ≥ 3 days, not yet `message_envoye`.

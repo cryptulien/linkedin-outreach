@@ -1,22 +1,22 @@
-# Prompt — Proposition DM (étape B)
+# Prompt — DM proposal (step B)
 
-Pour chaque prospect `en_relation` accepté depuis ≥ 3 jours sans DM :
+For each `en_relation` prospect accepted ≥ 3 days ago with no DM yet:
 
-1. Génère un message à partir du template (personnalise Prénom / organisation / Poste). Le pitch produit vient de `OUTREACH_PRODUCT_BLURB`.
-2. Ne l'envoie PAS.
-3. Présente un digest :
+1. Generate a message from the template (personalize first name / organization / title). Product pitch comes from `OUTREACH_PRODUCT_BLURB`.
+2. Do **not** send it.
+3. Present a digest:
 
 ```
-Messages à valider aujourd'hui (X)
+Messages to validate today (X)
 
-1. [Prénom Nom] – [Poste] – [Établissement]
-Lien profil : [URL]
-Date acceptation : JJ/MM/AAAA
+1. [First Last] – [Title] – [Organization]
+Profile link: [URL]
+Accepted on: DD/MM/YYYY
 
-Message proposé :
-[texte]
+Proposed message:
+[text]
 
-→ Réponds : « 1 ok » / « 1 modifier : … » / « 1 skip »
+→ Reply: « 1 ok » / « 1 modifier: … » / « 1 skip »
 ```
 
-4. Attends la validation humaine. Sur « ok » seulement, envoie le DM.
+4. Wait for human validation. Only on « ok », send the DM.

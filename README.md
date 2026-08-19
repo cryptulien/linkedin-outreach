@@ -1,12 +1,12 @@
 # LinkedIn Outreach
 
-Automatisation locale **partageable et généraliste** : invitations LinkedIn (cap journalier), vérification des acceptations (hebdo), proposition de DM avec **validation humaine**, CRM Twenty, alertes Discord.
+Shareable, **sector-agnostic** local automation: LinkedIn invitations (daily cap), weekly acceptance checks, DM proposals with **mandatory human validation**, Twenty CRM, Discord alerts.
 
-Aucun secteur imposé : hôpital, SaaS B2B, cabinet, association… tu branches ton CRM et tes templates.
+Any vertical works — healthcare, B2B SaaS, agencies, nonprofits. Point it at your CRM and templates.
 
-Orchestration : **n8n** · exécution : **grok-runner** · mode défaut : **`DRY_RUN=true`** (aucune action LinkedIn réelle).
+Orchestration: **n8n** · execution: **grok-runner** · default mode: **`DRY_RUN=true`** (no real LinkedIn actions).
 
-## Démarrage en 5 minutes
+## Get started in 5 minutes
 
 ```bash
 git clone https://github.com/cryptulien/linkedin-outreach.git
@@ -16,43 +16,43 @@ make up
 make dry-run-smoke
 ```
 
-- Runner : http://127.0.0.1:8090/healthz  
-- n8n : http://127.0.0.1:5679  
+- Runner: http://127.0.0.1:8090/healthz  
+- n8n: http://127.0.0.1:5679  
 
-## Modes Twenty
+## Twenty modes
 
-| `TWENTY_MODE` | Comportement |
-|---------------|--------------|
-| `mock` (défaut) | Store fichier + `twenty/seed-demo.json` (prospects fictifs multi-secteurs) |
-| `http` | API Twenty réelle (`TWENTY_API_URL` + `TWENTY_API_KEY`) |
+| `TWENTY_MODE` | Behavior |
+|---------------|----------|
+| `mock` (default) | File-backed store + `twenty/seed-demo.json` (multi-sector demo prospects) |
+| `http` | Real Twenty API (`TWENTY_API_URL` + `TWENTY_API_KEY`) |
 
-## Caps (surchargeables via `.env`)
+## Caps (overridable via `.env`)
 
-- 10 invitations / jour (`MAX_INVITES_PER_DAY`)  
-- Acceptations : 1 batch / semaine (Lun 08:15)  
-- Invitation **sans note**  
-- DM : jamais sans validation humaine (`ok` / `skip` / `modifier`)  
+- 10 invitations / day (`MAX_INVITES_PER_DAY`)  
+- Acceptances: 1 batch / week (Mon 08:15)  
+- Invitation **with no note**  
+- DMs: never without human validation (`ok` / `skip` / `modifier`)  
 
-## Personnalisation
+## Customization
 
-- Templates DM : `prompts/message-template.md` (ou génération via `defaultDmTemplate`)
-- Prompts agent : `prompts/*.md`
-- Statuts CRM : `twenty/statuses.md`
+- DM template blurb: `OUTREACH_PRODUCT_BLURB` in `.env`  
+- Agent prompts: `prompts/*.md`  
+- CRM statuses: `twenty/statuses.md`  
 
-## LIVE (attention ToS LinkedIn)
+## LIVE mode (LinkedIn ToS risk)
 
-Voir `docs/runbook.md`. Ne jamais committer cookies / `GROK_API_KEY`.
+See `docs/runbook.md`. Never commit cookies or `GROK_API_KEY`.
 
-## Commandes
+## Commands
 
 ```bash
 make up                 # build + start
 make test               # vitest grok-runner
-make dry-run-smoke      # enchaîne invites → propose → send (dry)
-make import-workflows   # importe les JSON n8n
+make dry-run-smoke      # invites → propose → send (dry)
+make import-workflows   # import n8n JSON workflows
 make down
 ```
 
-## Contexte SuperPagr
+## SuperPagr context
 
-Né pour la prospection SuperPagr, le repo est volontairement **sector-agnostic**. La spec d’origine (cas décideurs hospitaliers) reste dans le workspace SuperPagr pour l’historique produit.
+Built for SuperPagr prospecting, the repo is intentionally **sector-agnostic**. The original hospital-decision-maker flow remains a product example in the SuperPagr workspace / Excalidraw board.

@@ -18,25 +18,25 @@ export async function postDiscord(
 
 export function formatAlert(prospectLabel: string, reason: string, data: string): string {
   return [
-    "**ALERTING LinkedIn outreach**",
-    `Prospect : ${prospectLabel}`,
-    `Raison : ${reason}`,
-    `Données : ${data}`,
+    "**ALERT — LinkedIn outreach**",
+    `Prospect: ${prospectLabel}`,
+    `Reason: ${reason}`,
+    `Data: ${data}`,
   ].join("\n");
 }
 
 export function formatDigest(
   items: Array<{ index: number; label: string; url?: string; acceptedAt?: string; draft: string }>,
 ): string {
-  const lines = [`**Messages à valider aujourd'hui (${items.length})**`, ""];
+  const lines = [`**Messages to validate today (${items.length})**`, ""];
   for (const it of items) {
     lines.push(
       `${it.index}. ${it.label}`,
-      `Lien : ${it.url ?? "—"}`,
-      `Date acceptation : ${it.acceptedAt ?? "—"}`,
-      `Message proposé :`,
+      `Link: ${it.url ?? "—"}`,
+      `Accepted on: ${it.acceptedAt ?? "—"}`,
+      `Proposed message:`,
       it.draft,
-      `→ Réponds : « ${it.index} ok » / « ${it.index} modifier : … » / « ${it.index} skip »`,
+      `→ Reply: « ${it.index} ok » / « ${it.index} modifier: … » / « ${it.index} skip »`,
       "",
     );
   }

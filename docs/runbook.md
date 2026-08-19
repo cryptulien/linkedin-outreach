@@ -1,24 +1,24 @@
 # Runbook — DRY_RUN → LIVE
 
-## Principes
+## Principles
 
-- Par défaut `DRY_RUN=true` : le runner planifie et met à jour le store mock / Twenty, **sans** ouvrir LinkedIn.
-- LIVE implique un risque ToS LinkedIn (pilotage navigateur). Activer uniquement sur un compte dédié si possible.
+- Default `DRY_RUN=true`: the runner plans actions and updates the mock / Twenty store **without** opening LinkedIn.
+- LIVE carries LinkedIn ToS risk (browser automation). Prefer a dedicated account if you enable it.
 
-## Passage LIVE
+## Going LIVE
 
-1. Implémenter / brancher `grok-runner/src/linkedin/live_browser.ts` (Grok computer use).
-2. Renseigner `GROK_API_KEY` et la session LinkedIn **hors git**.
-3. Mettre `DRY_RUN=false` dans `.env`.
-4. Tester sur **1** prospect, caps bas (`MAX_INVITES_PER_DAY=1`).
-5. Surveiller Discord (alertes).
+1. Implement / wire `grok-runner/src/linkedin/live_browser.ts` (Grok computer use).
+2. Set `GROK_API_KEY` and the LinkedIn session **outside git**.
+3. Set `DRY_RUN=false` in `.env`.
+4. Test on **1** prospect with a low cap (`MAX_INVITES_PER_DAY=1`).
+5. Watch Discord (alerts).
 
 ## Twenty HTTP
 
 `TWENTY_MODE=http` + `TWENTY_API_URL` + `TWENTY_API_KEY`.  
-Le client HTTP d’écriture fine est un stub en v0 : brancher le mapping champs Twenty custom avant prod.
+Fine-grained Twenty field mapping is still a v0 stub — wire your custom fields before production use.
 
-## Incident
+## Incidents
 
-- Alerte `alerting_profil_non_trouve` → corriger l’URL / fiche Twenty manuellement.
-- Ban / challenge LinkedIn → remettre `DRY_RUN=true`, stopper les crons n8n.
+- `alerting_profil_non_trouve` → fix the LinkedIn URL / Twenty record manually.
+- LinkedIn ban / challenge → set `DRY_RUN=true` again and stop n8n schedules.

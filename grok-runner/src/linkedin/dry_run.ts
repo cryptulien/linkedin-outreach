@@ -24,22 +24,22 @@ export function planInvite(prospect: Prospect): InvitePlan {
   }
   return {
     kind: "alert_profil_non_trouve",
-    reason: `Profil non trouvé pour ${prospect.firstName} ${prospect.lastName} / ${prospect.establishment}`,
+    reason: `Profile not found for ${prospect.firstName} ${prospect.lastName} / ${prospect.establishment}`,
   };
 }
 
 export function defaultDmTemplate(p: Prospect): string {
   const product =
     process.env.OUTREACH_PRODUCT_BLURB ??
-    "Nous aidons les équipes à gagner du temps sur leur organisation au quotidien.";
+    "We help teams save time on day-to-day organization.";
   return [
-    `Bonjour ${p.firstName},`,
+    `Hi ${p.firstName},`,
     "",
-    `Je me permets de vous écrire au sujet de ${p.establishment} (${p.title}).`,
+    `I'm reaching out regarding ${p.establishment} (${p.title}).`,
     product,
     "",
-    "Seriez-vous ouvert(e) à un échange de 15 minutes ?",
+    "Would you be open to a 15-minute chat?",
     "",
-    "Bien cordialement",
+    "Best regards",
   ].join("\n");
 }

@@ -1,9 +1,9 @@
-# Prompt — Vérification acceptations (hebdo)
+# Prompt — Acceptance check (weekly)
 
-Pour chaque prospect `invite_envoye` du lot (15–20 max) :
+For each `invite_envoye` prospect in the batch (15–20 max):
 
-1. Ouvre le profil LinkedIn.
-2. Détermine si la relation est établie (invitation acceptée).
-3. Si oui → statut `en_relation` + date d'acceptation.
-4. Sinon → laisser `invite_envoye`.
-5. Pauses aléatoires entre profils. Une seule passe / semaine.
+1. Open the LinkedIn profile.
+2. Determine whether the connection is established (invitation accepted).
+3. If yes → status `en_relation` + acceptance date.
+4. Otherwise → leave `invite_envoye`.
+5. Random pauses between profiles. One pass / week only.
